@@ -1,0 +1,18 @@
+@import "../../styles/colors.scss";
+@import "../../styles/display.scss";
+
+.book-list__container {
+  @include flex-view(column, flex-start, center);
+  gap: 10px;
+
+  .book-list__items {
+    @include flex-view(row, space-between, flex-start);
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+  }
+
+  .book-list__editor-modal {
+    width: min(450px, 95%);
+  }
+}

@@ -1,10 +1,14 @@
 import React from "react";
-import "./globals.scss";
 import type { Metadata } from "next";
+
+import Header from "@/components/Header";
+import StoreProvider from "@/redux/store";
+
+import "./globals.scss";
 
 export const metadata: Metadata = {
   title: "My Book-Shelf!",
-  description: "A simple book-collection SPA.",
+  description: "Simple book-store application",
   authors: { name: "Mostafa Vahabzadeh", url: "https://github.com/vah-most" },
 };
 
@@ -15,7 +19,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <StoreProvider>
+          <div className="app_container">
+            <Header />
+            {children}
+          </div>
+        </StoreProvider>
+        <div id="portal-modal-id" />
+        <div id="portal-prompt-id" />
+      </body>
     </html>
   );
 }

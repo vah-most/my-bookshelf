@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Loftygoals";
+  src: url("/fonts/LoftygoalsRegular.otf") format("opentype");
+}
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -104,4 +109,10 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.app_container {
+  height: 100vh;
+  overflow: hidden;
+  width: 100vw;
 }

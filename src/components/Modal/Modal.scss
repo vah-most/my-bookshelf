@@ -1,0 +1,58 @@
+@import "../../styles/colors.scss";
+@import "../../styles/display.scss";
+
+.modal__container {
+  @include flex-center-view();
+  background-color: $modal-cover-bg-color;
+  bottom: 0px;
+  cursor: pointer;
+  display: none;
+  left: 0px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  z-index: 4001;
+
+  &.modal__container--visible {
+    display: flex;
+  }
+
+  .modal__box {
+    @include flex-view(column, flex-start, center);
+    background-color: $modal-bg-color;
+    border: 4px solid $modal-border-color;
+    border-radius: 10px;
+    cursor: auto;
+    max-height: 100%;
+
+    .modal__title {
+      @include flex-center-view(row);
+      background-color: $modal-title-bg-color;
+      border-bottom: 1px solid $modal-border-color;
+      color: $modal-title-text-color;
+      cursor: unset;
+      font-weight: 700;
+      padding: 10px 10px 10px 0px;
+      padding-bottom: 10px;
+      position: relative;
+      width: 100%;
+
+      .modal__close-btn {
+        @include flex-center-view(row);
+        cursor: pointer;
+        font-size: 22px;
+        position: absolute;
+        right: 10px;
+      }
+    }
+
+    .modal__content {
+      @include flex-view(column, flex-start, center);
+      height: 95%;
+      overflow: auto;
+      padding: 0px 10px 10px 10px;
+      padding: 10px 0px;
+      width: 100%;
+    }
+  }
+}

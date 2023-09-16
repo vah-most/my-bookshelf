@@ -1,0 +1,26 @@
+@import "../../styles/colors.scss";
+@import "../../styles/display.scss";
+
+.prompt-modal__box {
+  @include flex-center-view(column);
+  width: 300px !important;
+
+  .prompt-modal__message {
+    @include flex-center-view(row);
+    font-weight: 700;
+    padding: 0px 0px 10px 0px;
+  }
+
+  .prompt-modal__btns {
+    @include flex-center-view(row);
+
+    .prompt-modal__ok-btn,
+    .prompt-modal__cancel-btn {
+      background-color: $modal-button-bg-color;
+      color: $modal-button-text-color;
+      font-size: 12px;
+      margin: 0px 10px;
+      width: 100%;
+    }
+  }
+}
