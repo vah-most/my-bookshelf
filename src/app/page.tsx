@@ -1,5 +1,12 @@
-import "./page.module.css";
+import "./page.scss";
 
 export default function Home() {
-  return <div>My Book-Shelf</div>;
+  return (
+    <div className="home__container">
+      <h1>My Book-Shelf</h1>
+      <p>
+        This application would serve as a simple book-store if gets completed.
+      </p>
+    </div>
+  );
 }
