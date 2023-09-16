@@ -1,6 +1,6 @@
 import React from "react";
 
-import BookAddButton from "@/components/BookAddButton";
+import HeaderActions from "../HeaderActions";
 
 import "./Header.scss";
 
@@ -10,7 +10,7 @@ const Header = () => {
       <div className="header__title">
         <span>My BookShelf</span>
       </div>
-      <BookAddButton />
+      <HeaderActions />
     </div>
   );
 };

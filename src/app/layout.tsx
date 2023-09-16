@@ -2,7 +2,6 @@ import React from "react";
 import type { Metadata } from "next";
 
 import Header from "@/components/Header";
-import StoreProvider from "@/redux/store";
 
 import "./globals.scss";
 
@@ -20,12 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <StoreProvider>
-          <div className="app_container">
-            <Header />
-            {children}
-          </div>
-        </StoreProvider>
+        <div className="app_container">
+          <Header />
+          {children}
+        </div>
         <div id="portal-modal-id" />
         <div id="portal-prompt-id" />
       </body>

@@ -4,7 +4,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import booksReducer from "@/redux/booksSlice";
 import { Provider } from "react-redux";
 
-const store = configureStore({
+export const store = configureStore({
   reducer: {
     books: booksReducer,
   },
