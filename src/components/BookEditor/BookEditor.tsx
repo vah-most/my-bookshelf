@@ -13,7 +13,7 @@ interface IBookEditorProps {
   book: IBook;
   onSave: (book: IBook) => void;
   onClose: () => void;
-  onDelete: (bookId: TBookId) => void;
+  onDelete?: (bookId: TBookId) => void;
 }
 
 const BookEditor = ({ book, onClose, onSave, onDelete }: IBookEditorProps) => {
@@ -93,7 +93,7 @@ const BookEditor = ({ book, onClose, onSave, onDelete }: IBookEditorProps) => {
           </div>
         </div>
         <div className="book-editor__row book-editor__submit-row">
-          {book.id && (
+          {book.id && onDelete && (
             <Button
               className="book-editor__delete-btn"
               onClick={() => onDelete(book.id)}
