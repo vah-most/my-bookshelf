@@ -20,9 +20,17 @@
     span {
       color: $header-text-color;
       font-family: Loftygoals;
-      font-size: 20px;
+      font-size: 18px;
       margin-top: 5px;
       white-space: nowrap;
+    }
+  }
+}
+
+@media (min-width: $medium-device-min-width) {
+  .header__title {
+    span {
+      font-size: 20px !important;
     }
   }
 }

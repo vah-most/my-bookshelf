@@ -32,7 +32,7 @@ const BookItem = ({
         <div className="book-item__name">{book.name}</div>
         <div className="book-item__category">{book.category}</div>
       </div>
-      <div className="book-item__price">{book.price}$</div>
+      <div className="book-item__price">{book.price}&nbsp;$</div>
       <div className="book-item__desc">{book.description}</div>
       <div
         data-testid="book-item__delete"
