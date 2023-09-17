@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 
+const withFonts = require("nextjs-fonts");
+
 const isGithubActions = process.env.GITHUB_ACTIONS || false;
 
 let assetPrefix = "";
@@ -13,8 +15,10 @@ if (isGithubActions) {
   basePath = `/${repo}`;
 }
 
-module.exports = {
+const nextConfig = withFonts({
   assetPrefix: assetPrefix,
   basePath: basePath,
   output: "export",
-};
+});
+
+module.exports = nextConfig;
