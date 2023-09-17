@@ -60,7 +60,7 @@ const Modal = ({
     </div>
   );
 
-  return portalId
+  return portalId && document.getElementById(portalId)
     ? ReactDOM.createPortal(Modal, document.getElementById(portalId) as Element)
     : Modal;
 };
