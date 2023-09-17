@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { cloneDeep } from "lodash";
 import { CurrencyDollar } from "react-bootstrap-icons";
 
-import IBook from "@/types/IBook";
+import IBook, { TBookId } from "@/types/IBook";
 import TextField from "@/components/TextField";
 import Button from "@/components/Button";
 import Modal from "@/components/Modal";
@@ -13,9 +13,10 @@ interface IBookEditorProps {
   book: IBook;
   onSave: (book: IBook) => void;
   onClose: () => void;
+  onDelete: (bookId: TBookId) => void;
 }
 
-const BookEditor = ({ book, onClose, onSave }: IBookEditorProps) => {
+const BookEditor = ({ book, onClose, onSave, onDelete }: IBookEditorProps) => {
   const [bookProps, setBookProps] = useState<IBook>(book);
   const [initialView, setInitialView] = useState<boolean>(true);
 
@@ -92,6 +93,15 @@ const BookEditor = ({ book, onClose, onSave }: IBookEditorProps) => {
           </div>
         </div>
         <div className="book-editor__row book-editor__submit-row">
+          {book.id && (
+            <Button
+              className="book-editor__delete-btn"
+              onClick={() => onDelete(book.id)}
+              variant="contained"
+            >
+              Delete
+            </Button>
+          )}
           <Button
             className="book-editor__save-btn"
             onClick={() => submitRecordChanges()}

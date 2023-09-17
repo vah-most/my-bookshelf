@@ -29,6 +29,7 @@ const BookList = () => {
   };
 
   const handleBookDelete = (bookId: TBookId) => {
+    setModifyingBook(null);
     dispatch(deleteBook(bookId));
   };
 
@@ -57,6 +58,7 @@ const BookList = () => {
           book={modifyingBook}
           onClose={() => setModifyingBook(null)}
           onSave={handleBookSave}
+          onDelete={handleBookDelete}
         />
       )}
     </div>

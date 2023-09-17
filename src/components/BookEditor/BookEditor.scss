@@ -34,12 +34,19 @@
     .book-editor__save-btn {
       background-color: $modal-button-bg-color;
       color: $modal-button-text-color;
-      width: 100%;
+      width: 25%;
+    }
+
+    .book-editor__delete-btn {
+      background-color: $delete-button-bg-color;
+      color: $modal-button-text-color;
+      width: 25%;
     }
   }
 
   .book-editor__submit-row {
-    @include flex-center-view(row);
+    @include flex-view(row, flex-end, center);
+    gap: 10px;
     width: 100%;
   }
 }
