@@ -34,18 +34,24 @@ const BookList = () => {
 
   return (
     <div className="book-list__container">
-      <div className="book-list__items">
-        {books.map((book: IBook) => {
-          return (
-            <BookItem
-              key={book.id}
-              book={book}
-              onSelect={handleBookClick}
-              onDelete={handleBookDelete}
-            />
-          );
-        })}
-      </div>
+      {books.length > 0 ? (
+        <div className="book-list__items">
+          {books.map((book: IBook) => {
+            return (
+              <BookItem
+                key={book.id}
+                book={book}
+                onSelect={handleBookClick}
+                onDelete={handleBookDelete}
+              />
+            );
+          })}
+        </div>
+      ) : (
+        <div data-testid="book-list__empty" className="book-list__empty">
+          No books added yet.
+        </div>
+      )}
       {modifyingBook && (
         <BookEditor
           book={modifyingBook}

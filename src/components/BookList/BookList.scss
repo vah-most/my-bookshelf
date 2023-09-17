@@ -15,4 +15,14 @@
   .book-list__editor-modal {
     width: min(450px, 95%);
   }
+
+  .book-list__empty {
+    @include flex-center-view(column);
+    background-color: $book-item-bg-color;
+    border: 1px solid $book-item-border-color;
+    border-radius: 20px;
+    font-size: 20px;
+    height: 200px;
+    width: min(96%, 600px);
+  }
 }
