@@ -15,10 +15,10 @@ if (isGithubActions) {
   basePath = `/${repo}`;
 }
 
-const nextConfig = withFonts({
+const nextConfig = {
   assetPrefix: assetPrefix,
   basePath: basePath,
   output: "export",
-});
+};
 
 module.exports = nextConfig;
