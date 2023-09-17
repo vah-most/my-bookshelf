@@ -27,10 +27,14 @@
       width: 46%;
     }
 
+    .book-editor__currency-icon {
+      color: $modal-text-color;
+    }
+
     .book-editor__save-btn {
       background-color: $modal-button-bg-color;
       color: $modal-button-text-color;
-      width: 50%;
+      width: 100%;
     }
   }
 

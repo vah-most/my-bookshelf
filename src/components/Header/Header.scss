@@ -15,11 +15,13 @@
 
   .header__title {
     @include flex-view(row, flex-start, center);
+    gap: 10px;
 
     span {
       color: $header-text-color;
       font-family: Loftygoals;
-      font-size: 22px;
+      font-size: 20px;
+      margin-top: 5px;
       white-space: nowrap;
     }
   }

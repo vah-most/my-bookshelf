@@ -9,9 +9,13 @@ interface IButtonProps {
   [prop: string]: any;
 }
 
-const Button = ({ children, onClick, ...rest }: IButtonProps) => {
+const Button = ({ children, className, onClick, ...rest }: IButtonProps) => {
   return (
-    <MUIButton onClick={onClick} {...rest}>
+    <MUIButton
+      onClick={onClick}
+      className={`button__container ${className}`}
+      {...rest}
+    >
       {children}
     </MUIButton>
   );

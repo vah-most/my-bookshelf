@@ -44,6 +44,9 @@ const BookEditor = ({ book, onClose, onSave }: IBookEditorProps) => {
             <TextField
               autoFocus={true}
               error={!initialView && bookProps.name === ""}
+              helperText={
+                initialView || bookProps.name ? "" : "Please enter name."
+              }
               className="book-editor__row-name"
               label="Name"
               onBlur={() => setInitialView(false)}
@@ -72,13 +75,14 @@ const BookEditor = ({ book, onClose, onSave }: IBookEditorProps) => {
               }}
               value={bookProps.price}
             />
-            <CurrencyDollar />
+            <CurrencyDollar className="book-editor__currency-icon" />
           </div>
           <div className="book-editor__row">
             <TextField
               className="book-editor__row-desc"
               label="Description"
               multiline={true}
+              minRows={3}
               maxRows={3}
               onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                 handlePropChange("description", event.target.value);
